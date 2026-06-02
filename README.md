@@ -113,3 +113,4 @@ Ensure the Example 1 table displays the following results.
 | Bach      | Frank      | fbach@yahoo.com        | $51.00 | http://www.frank.com       |
 | Doe       | Jason      | jdoe@hotmail.com       | $100.00| http://www.jdoe.com        |
 | Conway    | Tim        | tconway@earthlink.net  | $50.00 | http://www.timconway.com   |
+ 
