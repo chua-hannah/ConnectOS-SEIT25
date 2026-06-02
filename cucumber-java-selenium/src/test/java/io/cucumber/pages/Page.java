@@ -1,25 +1,23 @@
 package io.cucumber.pages;
 
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import java.time.Duration;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import java.time.Duration;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Page {
 
   protected ChromeDriver driver;
+  protected WebDriverWait wait;
 
   public Page(ChromeDriver driver) {
     this.driver = driver;
-    PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(5)), this);
-    waitForPageLoad();
-  }
 
-  public void waitForPageLoad() {
-    try {
-      Thread.sleep(Duration.ofSeconds(5));
-    } catch (InterruptedException e) {
-      throw new RuntimeException(e);
-    }
+    PageFactory.initElements(driver, this);
+
+    this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
   }
 }
