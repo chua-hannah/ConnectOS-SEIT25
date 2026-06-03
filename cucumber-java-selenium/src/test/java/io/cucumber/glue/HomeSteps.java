@@ -26,8 +26,6 @@ public class HomeSteps extends Context {
 
   @Then("the displayed list of links should contain only the following examples:")
   public void verifyHomepageLinks(DataTable expectedTable) {
-
-    // Initialize Page Object
     homePage = new Home(getDriver());
 
     List<String> expectedLinks = expectedTable.asList(String.class);
@@ -36,7 +34,7 @@ public class HomeSteps extends Context {
     assertEquals(
             expectedLinks,
             actualLinks,
-            "FAIL: Homepage links do not exactly match expected blueprint."
+            " Homepage links do not exactly match expected blueprint."
     );
   }
 }

@@ -1,5 +1,6 @@
 package io.cucumber.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,9 @@ public class Home extends Page {
   @FindBy(xpath = "//div[@id='content']/ul/li")
   private List<WebElement> exampleLinks;
 
+  @FindBy(linkText = "Basic Auth")
+  private WebElement basicAuthLink;
+
   // ===== Getters / Actions =====
 
   public WebElement getTitle() {
@@ -43,6 +47,10 @@ public class Home extends Page {
     }
 
     return linksText;
+  }
+
+  public void clickBasicAuthLink() {
+    waitUntilVisible(basicAuthLink).click();
   }
 
   public void refresh() {
